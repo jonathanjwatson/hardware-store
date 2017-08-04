@@ -12,7 +12,7 @@ class AdminView extends Component {
                 <h2>Products</h2>
                 <ProductList productList={this.props.productList} />
                 <h2>Create a New Product</h2>
-                <ProductForm />
+                <ProductForm addNewProductToProductList={this.props.addNewProductToProductList} />
 
 
             </div>

@@ -19,11 +19,16 @@
  
      this.setState({newProduct})
    };
+    _addNewProduct = (event) => {
+        event.preventDefault();
+        
+        this.props.addNewProductToProductList(this.state.newProduct);
+    };
  
    render() {
      return (
          <div>
-           <form>
+           <form onSubmit={this._addNewProduct}>
              <div><input name="productName" type="text" placeholder="Name" onChange={this._handleNewProductChange}/></div>
              <div><input name="description" type="text" placeholder="Description" onChange={this._handleNewProductChange}/></div>
              <div><input name="price" type="number" min="0.00" step="0.01" placeholder="Price" onChange={this._handleNewProductChange}/></div>

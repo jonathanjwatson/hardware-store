@@ -30,7 +30,13 @@ class HomePage extends Component {
     _handleItemCurrentlyOnSaleChange = (event) => {
  	    const itemCurrentlyOnSale = event.target.value;
  	    this.setState({itemCurrentlyOnSale});
-   	};
+       };
+
+    _addNewProductToProductList = (newProduct) => {
+        const productList = [...this.state.productList];
+        productList.push(newProduct);
+        this.setState({productList});
+    };
 
 
     render() {
@@ -48,7 +54,7 @@ class HomePage extends Component {
  		        type="text"
                 />
                  </div> : null }
-                <AdminView productList={this.state.productList} />
+                <AdminView productList={this.state.productList} addNewProductToProductList={this._addNewProductToProductList} />
            </div>
            </div>
         )
